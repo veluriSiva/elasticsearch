@@ -1,0 +1,4 @@
+1. Adding new nodes to the cluster
+2. Wait for rebalance to complete
+3. Addition of new ip's to the existing nodes
+4. wait for rebalance to complete

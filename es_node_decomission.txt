@@ -1,0 +1,5 @@
+1. Stop the service on Decomission node
+2. Wait for rebalance to complete then cluster turns to the green state
+3. Removal ES ip from other nodes
+
+

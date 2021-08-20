@@ -1,0 +1,5 @@
+1. Creation of a repo (This creates internally the s3 path to store the backup)
+2. Triggering ES backup API
+if we are using s3 bucket, we need to install s3 plugin
+if we are using azure storage, need to install azure plugin
+For GCP, gcs plugin

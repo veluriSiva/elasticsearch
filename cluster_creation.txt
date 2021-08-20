@@ -1,0 +1,6 @@
+Important attributes:
+
+HeapMemory
+MinMasterNodes(For avoiding split brain problem)
+MinRecoveryNodes 
+ES cluster Name
