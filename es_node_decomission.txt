@@ -3,3 +3,12 @@
 3. Removal ES ip from other nodes
 
 
+You can decommission a node by telling the cluster to exclude it from allocation.
+
+curl -XPUT localhost:9200/_cluster/settings -H 'Content-Type: application/json' -d '{
+  "transient" :{
+      "cluster.routing.allocation.exclude._ip" : "10.0.0.1"
+   }
+}';echo
+
+Above command will cause Elasticsearch to allocate the shards on that node to the remaining nodes, without the state of the cluster changing to yellow or red.  Once all the shards have been reallocated you can shutdown the node
