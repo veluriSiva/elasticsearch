@@ -4,3 +4,34 @@ HeapMemory
 MinMasterNodes(For avoiding split brain problem)
 MinRecoveryNodes 
 ES cluster Name
+
+
+
+
+HeapMemory
+
+Java applications use the “stack” and “heap” methods to save data to memory.
+
+In Stack type, the operating system manages whether the data will be stored or deleted in memory.
+
+In Heap type, the application manages memory usage and cleaning. In Java, objects are stored in the heap memory and thanks to the structures called Garbage Collector, heap memory management is provided.
+
+The heap size is the amount of RAM allocated to the Java Virtual Machine of an Elasticsearch node.
+
+As a general rule, you should set -Xms and -Xmx to the SAME value, which should be 50% of your total available RAM subject to a maximum of (approximately) 31GB.
+
+By default, Elasticsearch automatically sets the JVM heap size based on a node’s roles and total memory. elasticsearch recommend the default sizing for most production environments.
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/important-settings.html#heap-size-settings 
+
+If needed, you can override the default sizing by manually setting the JVM heap size.
+
+
+MinMasterNodes(For avoiding split brain problem)
+
+discovery.zen.minimum_master_nodes:  ----- > This is very important for stability of a cluster. This setting helps prevent split brains, a situation where two masters exist in a single cluster.
+This setting tells elastic search to not elect a master unless there are enough master eligible nodes available. Only then election will place.
+
+
+
+
